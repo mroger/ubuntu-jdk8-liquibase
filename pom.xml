@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.org.roger.liquibase</groupId>
+    <artifactId>liquibase-docker</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <liquibase-changelog-file>changelog/changelog.xml</liquibase-changelog-file>
+        <liquibase-database-driver>com.mysql.cj.jdbc.Driver</liquibase-database-driver>
+        <liquibase-database-url>jdbc:mysql://localhost:3306/TIMESHEET</liquibase-database-url>
+        <liquibase-database-username>root</liquibase-database-username>
+        <liquibase-database-password>root</liquibase-database-password>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>3.6.2</version>
+                <configuration>
+                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                    <changeLogFile>${liquibase-changelog-file}</changeLogFile>
+                    <driver>${liquibase-database-driver}</driver>
+                    <url>${liquibase-database-url}</url>
+                    <username>${liquibase-database-username}</username>
+                    <password>${liquibase-database-password}</password>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

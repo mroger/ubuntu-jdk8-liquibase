@@ -4,8 +4,9 @@ ADD . /usr/local/ubuntu-jdk8-liquibase
 
 WORKDIR /usr/local/ubuntu-jdk8-liquibase
 
-RUN git pull origin master && \
-  mvn clean install && \
-  mvn liquibase:update -Dliquibase-database-password=root
+COPY bin/* /usr/local/bin/
 
-#CMD ["echo", "Liquibase Docker"]
+RUN chmod +x /usr/local/bin/*
+
+ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
+CMD ["/bin/sh", "-i"]

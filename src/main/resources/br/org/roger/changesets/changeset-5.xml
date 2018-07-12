@@ -62,4 +62,18 @@
         </rollback>
     </changeSet>
 
+    <changeSet id="5-5" author="marcos">
+        <createTable tableName="table-5">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="table-5"/>
+        </rollback>
+    </changeSet>
+
 </databaseChangeLog>

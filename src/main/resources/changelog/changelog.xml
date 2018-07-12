@@ -9,4 +9,5 @@
     <include file="br/org/roger/changesets/changeset-1.xml"/>
     <include file="br/org/roger/changesets/changeset-2.xml"/>
     <include file="br/org/roger/changesets/changeset-3.xml"/>
+    <include file="br/org/roger/changesets/changeset-4.xml"/>
 </databaseChangeLog>

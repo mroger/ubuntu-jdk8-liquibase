@@ -7,7 +7,21 @@
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="1" author="marcos">
-        <createTable tableName="person">
+        <createTable tableName="table-1">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="user"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="2" author="marcos">
+        <createTable tableName="table-2">
             <column name="id" type="int">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

@@ -16,7 +16,7 @@
             </column>
         </createTable>
         <rollback>
-            <dropTable tableName="user"/>
+            <dropTable tableName="table-1"/>
         </rollback>
     </changeSet>
 
@@ -30,7 +30,21 @@
             </column>
         </createTable>
         <rollback>
-            <dropTable tableName="user"/>
+            <dropTable tableName="table-2"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="5-3" author="marcos">
+        <createTable tableName="table-3">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="table-3"/>
         </rollback>
     </changeSet>
 

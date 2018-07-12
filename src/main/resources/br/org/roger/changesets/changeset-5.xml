@@ -6,7 +6,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="1" author="marcos">
+    <changeSet id="5-1" author="marcos">
         <createTable tableName="table-1">
             <column name="id" type="int">
                 <constraints primaryKey="true" nullable="false"/>
@@ -20,7 +20,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="2" author="marcos">
+    <changeSet id="5-2" author="marcos">
         <createTable tableName="table-2">
             <column name="id" type="int">
                 <constraints primaryKey="true" nullable="false"/>

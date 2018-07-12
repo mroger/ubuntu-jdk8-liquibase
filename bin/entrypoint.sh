@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git pull origin master
+git reset --hard origin/master
 mvn liquibase:update -Dliquibase-database-password=root

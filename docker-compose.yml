@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7.22
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=TIMESHEET
+  liquibase:
+    build: .
+    image: ubuntu-jdk8-liquibase:latest
+    depends_on:
+      - mysql
+    network_mode: "host"
+    #command: ["./bin/wait-for-it.sh", "mysql:3306", "--"]
